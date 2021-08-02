@@ -1,13 +1,11 @@
 package pl.pumbakos.TimeTracking.springboot;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class HelloController {
 
     @GetMapping("/")
@@ -16,14 +14,12 @@ public class HelloController {
     }
 
     @GetMapping("/hello")
-    public String hello(@RequestParam(name = "name", required = false, defaultValue = "Hello there!")
+    public String hello(@RequestParam(name = "name", required = false, defaultValue = " there!")
                         String name, Model model){
         model.addAttribute(name);
 
-        return "Hello, "+ name;
+        return "<h1>Hello, "+ name + "</h1>";
     }
-
-
 }
 
 
