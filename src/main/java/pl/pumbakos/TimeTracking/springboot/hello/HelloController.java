@@ -1,6 +1,5 @@
 package pl.pumbakos.TimeTracking.springboot.hello;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -8,7 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class HelloController {
 
-//    @ResponseBody
     @GetMapping("/")
     public ModelAndView index() {
         ModelAndView view = new ModelAndView();
@@ -16,7 +14,6 @@ public class HelloController {
         return view;
     }
 
-//    @ResponseBody
     @GetMapping("/hello")
     public ModelAndView hello(@RequestParam(name = "name", required = false, defaultValue = " there!")
                                       String name, Model model) {

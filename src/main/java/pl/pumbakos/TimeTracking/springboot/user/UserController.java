@@ -1,10 +1,6 @@
 package pl.pumbakos.TimeTracking.springboot.user;
 
-import org.springframework.http.HttpRequest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,7 +14,6 @@ public class UserController {
     List<User> users = new ArrayList<>();
 
     @GetMapping
-//    @ResponseBody
     public ModelAndView userIndex() {
         ModelAndView view = new ModelAndView();
         view.setViewName("user");
@@ -30,7 +25,6 @@ public class UserController {
         return users.stream().filter(u -> u.getName().equals(username)).findFirst().toString();
     }
 
-//    @ResponseBody()
     @PostMapping
     public User saveUser(@RequestBody User user) {
         User newUser = new User(user.getName(), user.getSurname(), user.getImageUrl());
@@ -38,7 +32,6 @@ public class UserController {
         return newUser;
     }
 
-//    @ResponseBody
     @GetMapping(value = "/print-all", produces = MediaType.TEXT_HTML_VALUE)
     public ModelAndView printUsers(Model model) {
         ModelAndView view = new ModelAndView();
