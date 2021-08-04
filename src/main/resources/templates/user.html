@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>USER</title>
+</head>
+<body>
+    <section style="display:flex; flex-direction:column;width:100%;height:100vh;justify-content:center;align-items:center;">
+        <form action="http://localhost:8080/user/" method="post" style="display:flex; flex-direction:column;width:30%;height:100vh;">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="surname" placeholder="Surname">
+            <input type="text" name="image" placeholder="image URL">
+            <input type="submit" value="ADD USER">
+        </form>
+    </section>
+</body>
+</html>
