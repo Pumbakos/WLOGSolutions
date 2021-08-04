@@ -5,6 +5,9 @@ public class User {
     private String surname;
     private String imageUrl;
 
+    public User() {
+    }
+
     public User(String name) {
         this.name = name;
     }

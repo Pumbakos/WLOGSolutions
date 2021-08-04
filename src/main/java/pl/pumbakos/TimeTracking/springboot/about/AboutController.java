@@ -1,12 +1,21 @@
 package pl.pumbakos.TimeTracking.springboot.about;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@RestController
+@RequestMapping("/about")
 public class AboutController {
 
-    public String about(){
-        return "<h1>WLOGSolutions</h1>";
+    @GetMapping
+    public ModelAndView about(){
+        ModelAndView view = new ModelAndView();
+        view.setViewName("about");
+
+        return view;
     }
 }
 
